@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
+    <h2>Essential 这使得人体各地方过得最舒服Links</h2>
     <ul>
       <li>
         <a
