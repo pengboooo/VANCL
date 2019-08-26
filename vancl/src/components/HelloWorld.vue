@@ -1,7 +1,9 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <h2>Essential Links可见光和恐怖了吧</h2>
+    <h2>Essential Links可见光和恐怖了吧个公会孤鸿寡鹄</h2>
+    <h2>Essential Links可见光和恐怖了吧个公会孤鸿寡鹄</h2>
+    <h2>Essential Links可见光和恐怖了吧个公会孤鸿寡鹄</h2>
     <ul>
       <li>
         <a
