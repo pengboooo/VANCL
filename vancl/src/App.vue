@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    这是我们的第一个项目
+    这是我们的第一个凡客项目
     <img src="./assets/logo.png">
     <router-view/>
   </div>
