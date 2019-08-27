@@ -1,15 +1,15 @@
 <template>
-  <div class="home">
+  <div class="cart">
     {{ msg }}
   </div>
 </template>
 
 <script>
 export default {
-  name: 'home',
+  name: 'cart',
   data () {
     return {
-      msg: '首页'
+      msg: '购物车'
     }
   }
 }

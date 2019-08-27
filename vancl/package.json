@@ -1,8 +1,8 @@
 {
-  "name": "vancl",
+  "name": "fanke",
   "version": "1.0.0",
-  "description": "凡客项目",
-  "author": "pengboooo <1223577600@qq.com>",
+  "description": "A Vue.js project",
+  "author": "dream <1767786460@qq.com>",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",

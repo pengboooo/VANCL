@@ -1,24 +1,20 @@
 <template>
   <div id="app">
-    这是我们的第一个凡客项目
-    <img src="./assets/logo.png">
+    <Common></Common>
     <router-view/>
   </div>
 </template>
 
 <script>
+import Common from '@/common/Common.vue'
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    Common
+  }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import url("./style/common.css");
 </style>
