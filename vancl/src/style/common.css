@@ -149,3 +149,7 @@ textarea {
 .icon-mine::before {
   content: '\e600';
 }
+
+.icon-left::before {
+  content: '\e696;';
+}

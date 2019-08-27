@@ -17,4 +17,7 @@ export default {
 
 <style>
 @import url("./style/common.css");
+#app{
+  height: 100%;
+}
 </style>
