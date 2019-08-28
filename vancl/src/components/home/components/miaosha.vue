@@ -145,12 +145,15 @@ export default {
   .bom{
      overflow: hidden;
   width: 100%;
-  background: #fff;
+  // background: #fff;
     ul{
       display: flex;
       overflow-x: auto;
       li{
-        padding: 0 20px;
+        // padding: 0 20px;
+          background: #fff;
+        margin-left: 20px;
+        height: 310px;
         img{
           width: 200px;
         }
@@ -158,6 +161,7 @@ export default {
               color: #b81c22;
               font-size: 22px;
               margin-left: 20px;
+              padding: 20px 0;
         }
         s{
           color: #adadad;

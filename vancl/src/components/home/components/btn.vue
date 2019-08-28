@@ -15,6 +15,7 @@
       height: 53px;
       border: none;
       background: white;
+      font-size: 24px;
     }
   }
 </style>
