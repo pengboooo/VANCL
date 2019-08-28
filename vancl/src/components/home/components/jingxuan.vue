@@ -31,7 +31,7 @@ export default {
   margin-top: 20px;
   h3{
     padding:20px;
-    font-size: 26px;
+    font-size: 28px;
     line-height: 20px;
     background-color: #FAFAFA;
     i{
@@ -42,7 +42,7 @@ export default {
       margin-top: 4px;
       margin-right: 5px;
       vertical-align: middle;
-     background-size: 35px
+     background-size: 35px;
     }
   }
 .part{

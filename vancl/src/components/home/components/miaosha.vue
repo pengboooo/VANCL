@@ -89,7 +89,7 @@ export default {
      position: relative;
      h3{
     padding:20px;
-    font-size: 26px;
+    font-size: 28px;
     line-height: 20px;
     display:inline-block;
     width: 50%;
