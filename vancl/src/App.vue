@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <Common></Common>
-    <router-view/>
+    <transition class="fadeln">
+      <router-view/>
+    </transition>
   </div>
 </template>
 
@@ -17,4 +19,7 @@ export default {
 
 <style>
 @import url("./style/common.css");
+#app{
+  height: 100%;
+}
 </style>

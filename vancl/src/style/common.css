@@ -71,8 +71,8 @@ input,
 select,
 textarea {
   border: 0;
-  -webkit-appearance: none;
-  appearance: none;
+  /* -webkit-appearance: none; */
+  /* appearance: normal; */
 }
 
 ol,
@@ -102,18 +102,6 @@ input,
 textarea {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-/* .brand .swiper-pagination{
-  position: relative;
-  top: -320px;
-  z-index: 600;
-  padding-right: 20px;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-}
-.swiper-pagination-bullet.active{
-  background: #f89;
-} */
 
 
 /* 字体图标 */

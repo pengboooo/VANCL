@@ -27,4 +27,10 @@ npm run e2e
 npm test
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## 在基础项目之前添加了返回上一个页面的函数
+## 加入rem单位的转换
+##  在项目中加入了Animate 动画切换，
+##  图片懒加载
+##  头部标题栏自动修改
+##  ico图片的显示
+

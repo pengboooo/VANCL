@@ -10,35 +10,53 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
-    // {
-    //   path: '/',
-    //   name: 'Home',
-    //   redirect: 'Home'
-    // },
+    {
+      path: '/',
+      name: 'Home',
+      redirect: '/home',
+      meta: {
+        title: '首页'
+      }
+    },
     {
       path: '/home',
       name: 'Home',
-      component: Home
+      component: Home,
+      meta: {
+        title: '首页'
+      }
     },
     {
       path: '/category',
       name: 'Category',
-      component: Category
+      component: Category,
+      meta: {
+        title: '分类'
+      }
     },
     {
       path: '/channel',
       name: 'Channel',
-      component: Channel
+      component: Channel,
+      meta: {
+        title: '频道'
+      }
     },
     {
       path: '/cart',
       name: 'Cart',
-      component: Cart
+      component: Cart,
+      meta: {
+        title: '购物车'
+      }
     },
     {
       path: '/mine',
       name: 'Mine',
-      component: Mine
+      component: Mine,
+      meta: {
+        title: '个人中心'
+      }
     }
   ]
 })
