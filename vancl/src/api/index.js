@@ -18,3 +18,16 @@ export function getSales () {
 export function getRecs () {
   return axios.get('recs')
 }
+export function Banner () {
+  return axios.get('home/banner')
+}
+// 列表
+export function Homenav () {
+  return axios.get('home/homenav')
+}
+export function Jingxuan () {
+  return axios.get('home/jingxuan')
+}
+export function Miaosha () {
+  return axios.get('home/miaosha')
+}

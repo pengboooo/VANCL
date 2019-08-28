@@ -6,6 +6,7 @@
 </template>
 <style lang="less" scoped>
   .btn{
+    margin-top: 30px;
     width: 100%;
     height: 60px;
     text-align: center;

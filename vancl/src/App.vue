@@ -6,6 +6,7 @@
 </template>
 
 <script>
+
 import Common from '@/common/Common.vue'
 export default {
   name: 'App',
