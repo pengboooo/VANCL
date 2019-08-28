@@ -1,15 +1,15 @@
 <template>
-  <div class="home">
+  <div class="channel">
     {{ msg }}
   </div>
 </template>
 
 <script>
 export default {
-  name: 'home',
+  name: 'channel',
   data () {
     return {
-      msg: '首页'
+      msg: '频道'
     }
   }
 }
@@ -17,5 +17,4 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
 </style>
