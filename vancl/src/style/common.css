@@ -119,15 +119,15 @@ textarea {
 }
 
 .icon-home::before {
-  content: '\e602'
+  content: '\e6e5'
 }
 
 .icon-fenlei::before {
-  content: '\e603'
+  content: '\e66c'
 }
 
 .icon-baobao::before {
-  content: '\e600'
+  content: '\e6c4'
 }
 
 .icon-che::before {
@@ -135,5 +135,9 @@ textarea {
 }
 
 .icon-mine::before {
-  content: '\e604';
+  content: '\e600';
+}
+
+.icon-left::before {
+  content: '\e696';
 }

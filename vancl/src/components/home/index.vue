@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'home',
+  name: 'channel',
   data () {
     return {
       msg: '首页'
