@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <Common></Common>
-    <router-view/>
+    <transition class="fadeln">
+      <router-view/>
+    </transition>
   </div>
 </template>
 

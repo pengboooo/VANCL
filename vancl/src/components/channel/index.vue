@@ -3,7 +3,7 @@
     <Top :manoe="m"></Top>
     <ul class="bodyimg">
       <li v-for="(item,index) in pddata" :key="index">
-        <img :src="item.img" alt="">
+        <img v-lazy="item.img" alt="">
       </li>
     </ul>
   </div>

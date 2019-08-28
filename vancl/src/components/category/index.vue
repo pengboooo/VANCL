@@ -9,7 +9,7 @@
     <div class="content-r">
       <ul>
         <li  v-for="(item,index) in rigehtdata[0].lists" :key="index">
-          <img :src="item.img" alt="">
+          <img v-lazy="item.img" alt="">
           <span v-text="item.spans"></span>
         </li>
       </ul>
