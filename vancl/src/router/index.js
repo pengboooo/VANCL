@@ -52,6 +52,7 @@ export default new Router({
     {
       path: '/mine',
       name: 'Mine',
+
       component: Mine,
       meta: {
         title: '个人中心'

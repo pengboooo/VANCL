@@ -1,20 +1,34 @@
 <template>
   <div class="cart">
-    {{ msg }}
+    <cartnav></cartnav>
+    <cartcontent></cartcontent>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
+import cartnav from './components/cartnav'
+import cartcontent from './components/cartcontent'
 export default {
-  name: 'cart',
+  name: 'Cart',
   data () {
     return {
-      msg: '购物车'
     }
+  },
+  components: {
+    cartnav,
+    cartcontent
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.cart{
+  height: 100%;
+  width: 100%;
+  background: #fff;
+  box-sizing: border-box;
+  padding-bottom: 102px;
+}
 </style>
