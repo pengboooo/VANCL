@@ -1,0 +1,155 @@
+@charset "utf-8";
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  -webkit-text-size-adjust: 100%;
+  font-family: -apple-system, "PingFang SC", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  font-size: 62.5%;
+  background: transparent;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+sumary {
+  margin: 0;
+  padding: 0;
+}
+
+
+input,
+select,
+textarea {
+  border: 0;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+
+*:not(input, select, textArea) {
+  -webkit-user-select: none;
+}
+
+img,
+a {
+  -webkit-touch-callout: none;
+}
+
+a,
+a:active,
+a:hover {
+  text-decoration: none;
+}
+
+a,
+button,
+input,
+textarea {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+/* .brand .swiper-pagination{
+  position: relative;
+  top: -320px;
+  z-index: 600;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.swiper-pagination-bullet.active{
+  background: #f89;
+} */
+
+
+/* 字体图标 */
+@font-face {
+  font-family: 'myfont';
+  src: url('../fonts/iconfont.eot') format('embedded-opentype'),
+    url('../fonts/iconfont.svg') format('svg'),
+    url('../fonts/iconfont.woff') format('woff'),
+    url('../fonts/iconfont.ttf') format('truetype');
+}
+
+[class^='iconfont'],
+[class*=' iconfont'] {
+  font-family: 'myfont'
+}
+
+.icon-home::before {
+  content: '\e6e5'
+}
+
+.icon-fenlei::before {
+  content: '\e66c'
+}
+
+.icon-baobao::before {
+  content: '\e6c4'
+}
+
+.icon-che::before {
+  content: '\e601';
+}
+
+.icon-mine::before {
+  content: '\e600';
+}
+
+.icon-left::before {
+  content: '\e696';
+}
