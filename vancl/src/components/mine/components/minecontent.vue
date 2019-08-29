@@ -37,12 +37,14 @@ export default {
   background: #fff;
   margin-top: 20px;
   margin-bottom: 30px;
+  font-size: 24px;
   h3{
     height: 84px;
     padding: 0 20px;
     line-height: 84px;
     border-bottom: 2px solid #F0EFF5;
     position: relative;
+    font-size: 26px;
     i{
       font-style: normal;
       position: absolute;
@@ -63,7 +65,7 @@ export default {
     li{
       width: 25%;
       text-align: center;
-      padding-top: 20px;
+      padding-top: 30px;
       box-sizing: border-box;
       p{
         width: 48px;

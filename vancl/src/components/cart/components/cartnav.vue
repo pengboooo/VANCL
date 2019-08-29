@@ -13,7 +13,8 @@
   i{
     font-style: normal;
     font-size: 60px;
-    margin-left: 20px
+    margin-left: 20px;
+    line-height: 96px;
   }
   span{
     display: inline-block;

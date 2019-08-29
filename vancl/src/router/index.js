@@ -12,10 +12,6 @@ export default new Router({
   routes: [
     {
       path: '/',
-<<<<<<< HEAD
-      name: 'Home',
-=======
->>>>>>> 4ec61741f1f678848bc0b4a214928c5c9a2ec5ce
       redirect: '/home',
       meta: {
         title: '首页'
@@ -56,6 +52,7 @@ export default new Router({
     {
       path: '/mine',
       name: 'Mine',
+
       component: Mine,
       meta: {
         title: '个人中心'

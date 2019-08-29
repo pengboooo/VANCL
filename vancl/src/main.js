@@ -6,6 +6,9 @@ import router from './router'
 import 'amfe-flexible/index.js'
 import animated from 'animate.css'
 import VueLazyload from 'vue-lazyload'
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/dist/css/swiper.css'
+Vue.use(VueAwesomeSwiper)
 
 Vue.use(animated)
 

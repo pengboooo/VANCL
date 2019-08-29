@@ -53,7 +53,7 @@ export default{
     }
   },
   created () {
-    getcartshopping().then(data => {
+    getcartshopping('cart/shopping').then(data => {
       this.shoppingArr = data
       // 显示不同页面；
       if (this.shoppingArr.length === 0) {
@@ -204,8 +204,8 @@ export default{
         .boxposition{
           position: relative;
           top: 60px;
-          width: 40px;
-          height: 40px;
+          width: 30px;
+          height: 30px;
           border: 1px solid #999;
         }
         img{

@@ -6,6 +6,14 @@
         <p>{{ item }}</p>
       </li>
     </ul>
+    <p>ahsjka</p>
+    <p>ahsjka</p>
+    <p>ahsjka</p>
+    <p>ahsjka</p>
+    <p>ahsjka</p>
+    <p>ahsjka</p>
+    <p>ahsjka</p>
+    <p>ahsjka</p>
   </div>
 </template>
 <script>
@@ -16,8 +24,9 @@ export default({
       mineNav: []
     }
   },
-  created () {
-    getminenav().then(data => {
+  async created () {
+    await getminenav('mine/nav').then(data => {
+      console.log(data)
       this.mineNav = data
     })
   }
@@ -27,6 +36,7 @@ export default({
 .minefloor{
   width: 100%;
   background: #fff;
+  font-size: 22px;
   ul{
     display: flex;
     justify-content: flex-start;

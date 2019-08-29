@@ -8,6 +8,7 @@
 </template>
 
 <script>
+
 import Common from '@/common/Common.vue'
 export default {
   name: 'App',
@@ -19,7 +20,10 @@ export default {
 
 <style>
 @import url("./style/common.css");
+@import url("./assets/reset.css");
 #app{
   height: 100%;
+  width: 100%;
 }
+
 </style>

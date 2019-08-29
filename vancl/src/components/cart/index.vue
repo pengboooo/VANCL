@@ -25,6 +25,9 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .cart{
+  height: 100%;
+  width: 100%;
+  background: #fff;
   padding-bottom: 98px;
 }
 </style>

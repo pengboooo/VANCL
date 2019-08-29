@@ -1,31 +1,56 @@
-<<<<<<< HEAD
 // 导入axios
-=======
->>>>>>> 4ec61741f1f678848bc0b4a214928c5c9a2ec5ce
 import axios from 'axios'
-// 截获数据，对数据进行处理
+axios.defaults.baseURL = 'http://127.0.0.1:3000/api/'
 axios.interceptors.response.use(function (response) {
-  // 返回对象的data数据
+  // Do something with response data
   return response.data
 }, function (error) {
-  // 返回error
+  // Do something with response error
   return Promise.reject(error)
 })
-<<<<<<< HEAD
-// 默认导出的地址；
-axios.defaults.baseURL = 'http://127.0.0.1:3000/api/'
 
-export function getcartshopping () {
-  return axios.get('cart/shopping')
+// 首页 start
+export function getGoods () {
+  return axios.get('home/goods')
 }
-export function getminenav () {
-  return axios.get('mine/nav')
-=======
-axios.defaults.baseURL = 'http://127.0.0.1:9000/fkapi/' // 设置请求前地址
+export function getSales () {
+  return axios.get('home/sale')
+}
+export function getRecs () {
+  return axios.get('home/recs')
+}
+export function Banner () {
+  return axios.get('home/banner')
+}
+// 列表
+export function Homenav () {
+  return axios.get('home/homenav')
+}
+export function Jingxuan () {
+  return axios.get('home/jingxuan')
+}
+export function Miaosha () {
+  return axios.get('home/miaosha')
+}
+// 首页end
+
+// 购物车、我的  start
+// 获取商品
+export function getcartshopping (url) {
+  return axios.get(url)
+}
+// 我的菜单
+export function getminenav (url) {
+  console.log(url)
+  return axios.get(url)
+}
+
+// 购物车、我的  end
+
 export function getSlide (url) {
   return axios.get(url)
 }
+
 export function goback () {
   this.$router.go(-1)
->>>>>>> 4ec61741f1f678848bc0b4a214928c5c9a2ec5ce
 }
