@@ -32,6 +32,7 @@ export default({
     width: 100%;
     height: 336px;
     padding: 0 20px;
+    box-sizing: border-box;
     span{
       background: url(http://i10.m.vancl.com/Content/H5/img/order-icon.png) no-repeat 0 0;
       background-size: 46px;

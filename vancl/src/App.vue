@@ -19,7 +19,6 @@ export default {
 </script>
 
 <style>
-@import url("./style/common.css");
 @import url("./assets/reset.css");
 #app{
   height: 100%;

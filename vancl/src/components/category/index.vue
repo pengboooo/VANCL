@@ -63,7 +63,7 @@ export default {
   margin: 0;
   padding: 0;
 }
-@import url("../../style/common.css");
+@import url("../../assets/reset.css");
 // 清除谷歌滚动条
 *::-webkit-scrollbar {  display: none!important }
 .active{
@@ -73,6 +73,8 @@ export default {
     display: flex;
      height: 100%;
       padding-top: 96px;
+      padding-bottom: 102px;
+      box-sizing: border-box;
   .content-l{
      height: 100%;
     flex: 2.5;

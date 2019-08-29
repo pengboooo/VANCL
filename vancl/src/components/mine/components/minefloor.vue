@@ -6,14 +6,6 @@
         <p>{{ item }}</p>
       </li>
     </ul>
-    <p>ahsjka</p>
-    <p>ahsjka</p>
-    <p>ahsjka</p>
-    <p>ahsjka</p>
-    <p>ahsjka</p>
-    <p>ahsjka</p>
-    <p>ahsjka</p>
-    <p>ahsjka</p>
   </div>
 </template>
 <script>

@@ -31,8 +31,7 @@ export default {
 <style scoped>
 .mine{
   width: 100%;
-  height: 100%;
-  padding-bottom: 150px;
+  padding-bottom: 102px;
   box-sizing: border-box;
   background: #F0EFF5;
 }

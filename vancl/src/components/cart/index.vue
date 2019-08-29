@@ -28,6 +28,7 @@ export default {
   height: 100%;
   width: 100%;
   background: #fff;
-  padding-bottom: 98px;
+  box-sizing: border-box;
+  padding-bottom: 102px;
 }
 </style>

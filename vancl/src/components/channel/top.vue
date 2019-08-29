@@ -14,7 +14,8 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-@import url("../../style/common.css");
+@import url("../../assets/reset.css");
+
 .top{
   position: absolute;
   top: 0;
