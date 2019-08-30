@@ -23,7 +23,6 @@ export default {
   width: 100%;
   height: 96px;
   background: #b81c22;
-  font-size: 60px;
   color: #fff;
   line-height: 94px;
   i{
@@ -37,7 +36,7 @@ export default {
   span{
     display: inline-block;
     height: 100%;
-    width: 80%;
+    width: 70%;
     font-size: 34px;
     line-height: 96px;
     text-align: center;

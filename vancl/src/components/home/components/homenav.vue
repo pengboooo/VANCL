@@ -1,9 +1,9 @@
 <template>
   <div class="box">
-    <img src="https://mi1.vanclimg.com/oms/2019_8_27_10_2_34_5362_678x60.jpg" alt="">
+    <img v-lazy="'https://mi1.vanclimg.com/oms/2019_8_27_10_2_34_5362_678x60.jpg'" alt="">
     <ul>
       <li v-for="(item, index) in navArr" :key="index">
-        <img :src="item.img" alt="">
+        <img v-lazy="item.img" alt="">
         <span>{{item.title}}</span>
       </li>
     </ul>

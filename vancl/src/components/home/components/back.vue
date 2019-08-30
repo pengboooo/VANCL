@@ -1,10 +1,10 @@
 <template>
   <div class="back">
     <router-link to="/category" class="nn">
-      <img src="https://mi5.vanclimg.com/content/html5v3/images/see-all.jpg">
+      <img v-lazy="'https://mi5.vanclimg.com/content/html5v3/images/see-all.jpg'">
     </router-link>
     <span class="nm" v-if="btnFlag" @click="backTop">
-      <img src="https://mi5.vanclimg.com/content/html5v3/images/ret-top.jpg">
+      <img v-lazy="'https://mi5.vanclimg.com/content/html5v3/images/ret-top.jpg'">
     </span>
   </div>
 </template>

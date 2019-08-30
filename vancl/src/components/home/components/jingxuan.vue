@@ -4,7 +4,7 @@
     <div class="part">
       <ul>
         <li v-for="(item,index) in jingxuanArr" :key='index'>
-          <img :src="item" alt="">
+          <img v-lazy="item" alt="">
         </li>
       </ul>
     </div>

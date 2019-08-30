@@ -5,6 +5,7 @@ import Category from '@/components/category/index'
 import Channel from '@/components/channel/index'
 import Cart from '@/components/cart/index'
 import Mine from '@/components/mine/index'
+import Lists from '@/components/category/lists/index'
 
 Vue.use(Router)
 
@@ -56,6 +57,14 @@ export default new Router({
       component: Mine,
       meta: {
         title: '个人中心'
+      }
+    },
+    {
+      path: '/category/lists',
+      name: 'lists',
+      component: Lists,
+      meta: {
+        title: '分类列表'
       }
     }
   ]

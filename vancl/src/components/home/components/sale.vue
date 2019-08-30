@@ -1,13 +1,13 @@
 <template>
     <div class="sale">
         <h3>
-            <img src="https://mi.vanclimg.com/oms/2017_12_19_14_40_52_8584_26x26.jpg" />特惠专区
+            <img v-lazy="'https://mi.vanclimg.com/oms/2017_12_19_14_40_52_8584_26x26.jpg'" />特惠专区
         </h3>
-        <img class="tip" src="https://mi1.vanclimg.com/wap/2019_8_27_9_24_2_5860_640x54.jpg">
+        <img class="tip" v-lazy="'https://mi1.vanclimg.com/wap/2019_8_27_9_24_2_5860_640x54.jpg'">
         <div class="box">
           <ul>
             <li v-for="(item,index) in list" :key="index">
-              <img :src="item">
+              <img v-lazy="item">
             </li>
           </ul>
         </div>

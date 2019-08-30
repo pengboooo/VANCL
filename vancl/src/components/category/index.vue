@@ -7,11 +7,11 @@
       </ul>
     </div>
     <div class="content-r">
-      <ul>
-        <li  v-for="(item,index) in rigehtdata[0].lists" :key="index">
-          <img v-lazy="item.img" alt="">
+      <ul >
+        <router-link :to="{name:'lists',params:{spans:item.spans}}" tag='li' v-for="(item,index) in rigehtdata[0].lists" :key="index" @click="setname(item)">
+          <img  v-lazy="item.img" alt="">
           <span v-text="item.spans"></span>
-        </li>
+        </router-link>
       </ul>
     </div>
   </div>
@@ -53,7 +53,6 @@ export default {
       m: '分类'
     }
   }
-
 }
 </script>
 
@@ -66,6 +65,7 @@ export default {
 @import url("../../assets/reset.css");
 // 清除谷歌滚动条
 *::-webkit-scrollbar {  display: none!important }
+
 .active{
   background: #fff;
 }

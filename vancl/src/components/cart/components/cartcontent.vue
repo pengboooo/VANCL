@@ -11,7 +11,7 @@
       <ul ref="cartul">
         <li v-for="(item, index) in shoppingArr" :key="index">
           <input class="boxposition" type="checkbox" v-model="item.cartcheckbox" @change="itemschange">
-          <img :src="item.cartpic" alt="">
+          <img v-lazy="item.cartpic" alt="">
           <div class="content">
             <h3>{{ item.cartname }}</h3>
             <p>颜色： {{ item.cartcolor }}</p>
@@ -21,7 +21,7 @@
             <input type="text" class="sum" v-model="item.cartsum">
             <i @click="addsum(index)">+</i>
           </div>
-          <img src="../images/icondel.png" class="icondel" @click="itemdel(index)">
+          <img src = "../images/icondel.png" class="icondel" @click="itemdel(index)">
         </li>
       </ul>
       <!-- 结算 -->

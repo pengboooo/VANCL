@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Common></Common>
-    <transition class="fadeln">
+    <transition  enter-active-class="animated zoomIn" leave-active-class="animated zoomOut">
       <router-view/>
     </transition>
   </div>
@@ -20,6 +20,10 @@ export default {
 
 <style>
 @import url("./assets/reset.css");
+.animated {
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+}
 #app{
   height: 100%;
   width: 100%;

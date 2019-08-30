@@ -1,14 +1,14 @@
 <template>
   <div class="recs">
-    <h3><img src="https://mi.vanclimg.com/oms/2018_1_10_14_54_45_8302_26x26.jpg">优选推荐</h3>
+    <h3><img v-lazy="'https://mi.vanclimg.com/oms/2018_1_10_14_54_45_8302_26x26.jpg'">优选推荐</h3>
      <div class="box" v-for="(item,index) in mydata" :key="index">
        <div class="banner">
-         <img :src="item.advert">
+         <img v-lazy="item.advert">
          <span class="tip"></span>
        </div>
       <ul class="lists" ref="myul">
         <li ref="myli" v-for="(item,index) in item.lists" :key="index">
-          <img :src="item.img">
+          <img v-lazy="item.img">
           <p class="name">{{item.title}}</p>
           <p class="pri">售价：￥{{item.pri}}</p>
           <p class="newpri">充值相当于：<span>￥{{item.newpri}}</span></p>

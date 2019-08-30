@@ -1,17 +1,17 @@
 <template>
   <div class="t-shirt">
-    <h3><img src="https://mi.vanclimg.com/oms/2017_12_19_14_40_52_8584_26x26.jpg">凡客T恤</h3>
+    <h3><img v-lazy="'https://mi.vanclimg.com/oms/2017_12_19_14_40_52_8584_26x26.jpg'">凡客T恤</h3>
     <div class="box" v-for="(item,index) in goods" :key="index">
        <swiper :options="swiperOption" >
           <swiper-slide v-for="(slide, index) in item.advert" :key="index">
-            <img class="s-img" :src="slide" alt="">
+            <img class="s-img" v-lazy="slide" alt="">
             <span class="tip"></span>
           </swiper-slide>
           <!-- <div class="swiper-pagination" slot="pagination"></div> -->
        </swiper>
       <ul class="lists" ref="myul">
         <li ref="myli" v-for="(item,index) in item.lists" :key="index">
-          <img :src="item.img">
+          <img v-lazy="item.img">
           <p class="name">{{item.title}}</p>
           <p class="pri">售价：￥{{item.pri}}</p>
           <p class="newpri">充值相当于：<span>￥{{item.newpri}}</span></p>

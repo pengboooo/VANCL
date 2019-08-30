@@ -36,7 +36,7 @@ export default {
   span{
     display: inline-block;
     height: 100%;
-    width: 80%;
+    width: 70%;
     font-size: 34px;
     line-height: 96px;
     text-align: center;

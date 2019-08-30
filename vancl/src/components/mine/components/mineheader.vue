@@ -3,7 +3,7 @@
     <div class="headertop">
       <span></span>
       <div class="pic">
-        <img src="http://i10.m.vancl.com/Content/H5/img/H5-V0.jpg" alt="">
+        <img v-lazy="'http://i10.m.vancl.com/Content/H5/img/H5-V0.jpg'" alt="">
       </div>
       <p>ThirdSign_qq_E20B46381931A98127E8400E408F8D0B</p>
       <i></i>
