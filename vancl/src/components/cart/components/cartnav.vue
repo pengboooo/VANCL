@@ -1,9 +1,22 @@
 <template>
   <nav class="cartnav">
-    <i>&lt;</i>
+    <i @click="goup">&lt;</i>
     <span>购物车</span>
   </nav>
 </template>
+<script>
+export default {
+  methods: {
+    goup () {
+      this.$router.go(-1)
+    }
+  }
+}
+</script>
+
+<style>
+
+</style>
 <style lang="less" scoped>
 .cartnav{
   background: #B81C22;

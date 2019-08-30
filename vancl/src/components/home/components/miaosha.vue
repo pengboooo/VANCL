@@ -9,7 +9,9 @@
     <div class="bom">
         <ul ref="bomul">
           <li ref="bomli" v-for='(item,index) in miaoshaArr' :key='index'>
-            <img :src="item.img" alt="">
+            <router-link to = "/detail" tag = "p">
+              <img :src="item.img" alt="">
+            </router-link>
             <span>{{item.price}}</span>
             <s>{{item.Reprice}}</s>
           </li>

@@ -59,7 +59,7 @@ router.get('/details', function(req, res, next) {
       detmoney : 58,
       detremoney : 118,
       detinterests : '充100返100，点击充值',
-      detcolor : ['白色'],
+      detcolor : ['白色','黑色'],
       detsize : ['S','M','L','XL','XXL'],
       detshopping : [
         'https://mi2.vanclimg.com/oms/2019_5_29_15_53_36_9961_640x415.jpg',

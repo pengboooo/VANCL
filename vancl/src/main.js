@@ -3,12 +3,23 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import 'amfe-flexible/index.js'
+
+import 'lib-flexible'
+
 import animated from 'animate.css'
+
 import VueLazyload from 'vue-lazyload'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+
 import 'swiper/dist/css/swiper.css'
+
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+
+Vue.use(ElementUI)
 Vue.use(VueAwesomeSwiper)
+
+// Vue.use(Element, { size: 'small', zIndex: 3000 })
 
 Vue.use(animated)
 

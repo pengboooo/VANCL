@@ -5,6 +5,7 @@ import Category from '@/components/category/index'
 import Channel from '@/components/channel/index'
 import Cart from '@/components/cart/index'
 import Mine from '@/components/mine/index'
+import Detail from '@/common/details'
 
 Vue.use(Router)
 
@@ -52,10 +53,17 @@ export default new Router({
     {
       path: '/mine',
       name: 'Mine',
-
       component: Mine,
       meta: {
         title: '个人中心'
+      }
+    },
+    {
+      path: '/detail',
+      name: 'Detail',
+      component: Detail,
+      meta: {
+        title: '商品详情'
       }
     }
   ]

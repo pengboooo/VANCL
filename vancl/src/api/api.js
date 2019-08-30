@@ -1,7 +1,7 @@
 // 导入axios
 import axios from 'axios'
-// axios.defaults.baseURL = 'http://127.0.0.1:3000/api/'
-axios.defaults.baseURL = 'http://192.168.137.1:3000/api/'
+axios.defaults.baseURL = 'http://127.0.0.1:3000/api/'
+// axios.defaults.baseURL = 'http://192.168.137.1:3000/api/'
 axios.interceptors.response.use(function (response) {
   // Do something with response data
   return response.data
@@ -48,6 +48,11 @@ export function getminenav (url) {
 
 // 分类 和  频道
 export function getSlide (url) {
+  return axios.get(url)
+}
+
+// 详情页
+export function getdetail (url) {
   return axios.get(url)
 }
 
