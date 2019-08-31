@@ -108,6 +108,53 @@ router.get('/details', function(req, res, next) {
           }
         }
       ]
+    },
+    {
+      detcid : 2,
+      dettitle : 'T恤 崔海军 黑猫7 白色',
+      detpic : [
+        'http://i.vanclimg.com/640/q80/product/6/3/8/6386297/big/6386297-1j201907161129189638.jpg',
+        'http://i.vanclimg.com/640/q80/product/6/3/8/6386297/big/6386297-2201907161129189638.jpg'
+      ],
+      detmoney : 58,
+      detremoney : 118,
+      detinterests : '充100返100，点击充值',
+      detcolor : ['白色','黑色'],
+      detsize : ['S','M','L','XL','XXL'],
+      detshopping : [
+        'https://mi2.vanclimg.com/oms/2019_5_29_15_53_36_9961_640x415.jpg',
+        'https://mi1.vanclimg.com/oms/2019_5_29_15_53_38_4356_640x168.jpg'
+      ],
+      delpl : [
+        {
+          telname : '1527***',
+          namepl : '回头客，好就买',
+          nametime : '2019/8/16 22:08:05'
+        },
+        {
+          telname : 'ThirdSign***',
+          namepl : '不错，非常好',
+          nametime : '2019/8/6 22:38:07'
+        }
+      ],
+      questions : [
+        {
+          quetitle: "身高一米六五体重46kg应该买几码",
+          answerArr: {
+            anname : 'ThirdSi***',
+            antime : '2019-08-13',
+            ancontent : '亲爱的客户您好，您可以尝试购买一件S码的哦（注：推荐尺码仅供参考），感谢您的支持！祝您购物愉快！O(∩_∩)O'
+          }
+        },
+        {
+          quetitle: "身高一米六五体重46kg应该买几码",
+          answerArr: {
+            anname : 'ThirdSi***',
+            antime : '2019-08-13',
+            ancontent : '亲爱的客户您好，您可以尝试购买一件S码的哦（注：推荐尺码仅供参考），感谢您的支持！祝您购物愉快！O(∩_∩)O'
+          }
+        }
+      ]
     }
   ]
   res.send(JSON.stringify(detailsArr));

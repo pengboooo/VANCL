@@ -115,8 +115,9 @@ export default {
   },
   created () {
     getdetail('details').then(data => {
-      this.detailArr = data[0]
-      this.swiperSlides = data[0].detpic
+      console.log(this.$store.state.cid)
+      this.detailArr = data[this.$store.state.cid]
+      this.swiperSlides = data[this.$store.state.cid].detpic
     })
   },
   methods: {

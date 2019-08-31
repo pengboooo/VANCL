@@ -9,8 +9,8 @@
     <div class="bom">
         <ul ref="bomul">
           <li ref="bomli" v-for='(item,index) in miaoshaArr' :key='index'>
-            <router-link to = "/detail" tag = "p">
-              <img :src="item.img" alt="">
+            <router-link to = "/detail">
+              <img :src="item.img" alt="" @click="getid(index)">
             </router-link>
             <span>{{item.price}}</span>
             <s>{{item.Reprice}}</s>
@@ -70,6 +70,9 @@ export default {
         }
         return num
       }
+    },
+    getid (index) {
+      this.$store.commit('getcid', index)
     }
   },
   created () {

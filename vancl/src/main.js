@@ -16,6 +16,8 @@ import 'swiper/dist/css/swiper.css'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 
+import store from './store/index'
+
 Vue.use(ElementUI)
 Vue.use(VueAwesomeSwiper)
 
@@ -37,6 +39,7 @@ router.beforeEach((to, from, next) => {
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  store,
   router,
   components: { App },
   template: '<App/>'
