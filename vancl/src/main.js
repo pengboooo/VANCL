@@ -9,11 +9,13 @@ import VueLazyload from 'vue-lazyload'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
 import Vuex from 'vuex'
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+
+Vue.use(ElementUI)
 Vue.use(Vuex)
 Vue.use(VueAwesomeSwiper)
-
 Vue.use(animated)
-
 Vue.use(VueLazyload)
 
 Vue.config.productionTip = false

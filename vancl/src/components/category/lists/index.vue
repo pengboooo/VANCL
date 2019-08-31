@@ -39,27 +39,24 @@ export default {
     goback,
     sort () {
       // json升序排序
-     this.lists.sort((a, b) => {
+      this.lists.sort((a, b) => {
         return a.pri - b.pri
       })
     },
-     sortj () {
+    sortj () {
       // json降序排序
-     this.lists.sort((a, b) => {
+      this.lists.sort((a, b) => {
         return b.pri - a.pri
       })
     },
-     getIndex(index){
-         let target=index.target;//事件发生的元素
-     let ul = index.target.parentNode.children;//同级元素集合
-     for(let i = 0; i < ul.length; i++){
-          if(ul[i] ===target){
-          this.index = i;
+    getIndex (index) {
+      let target = index.target // 事件发生的元素
+      let ul = index.target.parentNode.children // 同级元素集合
+      for (let i = 0; i < ul.length; i++) {
+        if (ul[i] === target) {
+          this.index = i
         }
-     }
-   
-     
-     
+      }
     }
   },
   created (index) {
@@ -77,7 +74,6 @@ export default {
 .lists{
   width: 100% !important;
   margin-bottom: 102px;
- 
   .wrap{
         width: 100%;
         height: 96px;

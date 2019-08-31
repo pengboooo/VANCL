@@ -4,8 +4,10 @@ import Home from '@/components/home/index'
 import Category from '@/components/category/index'
 import Channel from '@/components/channel/index'
 import Cart from '@/components/cart/index'
-import Mine from '@/components/mine/index'
+import Mine from '@/components/mine/mine'
 import Lists from '@/components/category/lists/index'
+import Registe from '@/components/mine/components/registe'
+import Getback from '@/components/mine/components/getback'
 
 Vue.use(Router)
 
@@ -53,7 +55,6 @@ export default new Router({
     {
       path: '/mine',
       name: 'Mine',
-
       component: Mine,
       meta: {
         title: '个人中心'
@@ -65,6 +66,22 @@ export default new Router({
       component: Lists,
       meta: {
         title: '分类列表'
+      }
+    },
+    {
+      path: '/mine/registe',
+      name: 'Registe',
+      component: Registe,
+      meta: {
+        title: '免费注册'
+      }
+    },
+    {
+      path: '/mine/getback',
+      name: 'Getback',
+      component: Getback,
+      meta: {
+        title: '找回密码'
       }
     }
   ]

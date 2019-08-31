@@ -54,17 +54,16 @@ export function getSlide (url) {
 export function goback () {
   this.$router.go(-1)
 }
-// json数据排序
-// export function pric (property) {
-//   // 正序排序;
-//   compare : function () {
-//     return function (a,b){
-//       var value1 = a[property]
-//       var value2 = b[property]
-//       return value1 - value2;
-//     };
-//   }
-// console.log(arr.sort(function(property){return function(a,b){var v1 = a[property]; var v2 = b[property]; return v1 -v2 }}));
-// let arr = this.lists
-//  console.log(arr.sort(compare('age')))
-// }
+
+export function GetLogin (data) {
+  return axios.post('login', data)
+}
+
+export function open1 () {
+  /* eslint-disable */
+  this.$message(`登录成功`); 
+}
+export function gitcode () {
+  
+}
+
