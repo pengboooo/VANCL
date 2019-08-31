@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+const fs = require("fs");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -1417,53 +1418,53 @@ router.get('/lists', function(req, res, next) {
           title:'凡客衬衫 水洗棉 小方领 短袖 男款',
           pri:'138'
         }, {
-          img:'',
-          title:'',
-          pri:''
+          img:'http://i.vanclimg.com/640/q80/product/6/3/8/6385087/big/6385087-1j201904260906584802.jpg',
+          title:'凡客衬衫 水洗棉 小方领 短袖 男款',
+          pri:'138'
         }, {
-          img:'',
-          title:'',
-          pri:''
+          img:'http://i.vanclimg.com/640/q80/product/6/3/8/6385086/big/6385086-1j201904260907034804.jpg',
+          title:'凡客衬衫 水洗棉 小方领 短袖 男款',
+          pri:'138'
         }, {
-          img:'',
-          title:'',
-          pri:''
+          img:'http://i.vanclimg.com/640/q80/product/6/3/8/6385085/big/6385085-1j201904260907034804.jpg',
+          title:'凡客衬衫 水洗棉 小方领 短袖 男款',
+          pri:'138'
         }, {
-          img:'',
-          title:'',
-          pri:''
+          img:'http://i.vanclimg.com/640/q80/product/6/3/8/6385084/big/6385084-1j201904260907081524.jpg',
+          title:'凡客衬衫 水洗棉 小方领 短袖 男款',
+          pri:'138'
         }, {
-          img:'',
-          title:'',
-          pri:''
+          img:'http://i.vanclimg.com/640/q80/product/6/3/8/6385083/big/6385083-1j201904260907084805.jpg',
+          title:'凡客衬衫 水洗棉 小方领 短袖 男款',
+          pri:'138'
         }, {
-          img:'',
-          title:'',
-          pri:''
+          img:'http://i.vanclimg.com/640/q80/product/6/3/8/6385081/big/6385081-1j201904260907184807.jpg',
+          title:'凡客衬衫 水洗棉 小方领 短袖 男款',
+          pri:'138'
         }, {
-          img:'',
-          title:'',
-          pri:''
+          img:'http://i.vanclimg.com/640/q80/product/6/3/8/6385080/big/6385080-1j201904260907231682.jpg',
+          title:'凡客衬衫 水洗棉 小方领 短袖 男款',
+          pri:'138'
         }, {
-          img:'',
-          title:'',
-          pri:''
+          img:'http://i.vanclimg.com/640/q80/product/6/3/8/6386146/big/6386146-1j201904181531408761.jpg',
+          title:'男士短袖商务衬衫 D706',
+          pri:'328'
         }, {
-          img:'',
-          title:'',
-          pri:''
+          img:'http://i.vanclimg.com/640/q80/product/6/3/8/6386145/big/6386145-1j201904181531360635.jpg',
+          title:'男士短袖商务衬衫 D706',
+          pri:'328'
         }, {
-          img:'',
-          title:'',
-          pri:''
+          img:'http://i.vanclimg.com/640/q80/product/6/3/8/6386144/big/6386144-1j201904181531358604.jpg',
+          title:'男士短袖商务衬衫 D706',
+          pri:'328'
         }, {
-          img:'',
-          title:'',
-          pri:''
+          img:'http://i.vanclimg.com/640/q80/product/6/3/8/6386142/big/6386142-1j201904181531308759.jpg',
+          title:'男士短袖商务衬衫 D706',
+          pri:'328'
         }, {
-          img:'',
-          title:'',
-          pri:''
+          img:'http://i.vanclimg.com/640/q80/product/6/3/8/6386120/big/6386120-1j201904181533409252.jpg',
+          title:'男士短袖商务衬衫 D0608',
+          pri:'328'
         }
       ]
     }
@@ -1748,7 +1749,34 @@ router.get('/getlistdata', function (req, res, next) {
       })
   res.send(arr);
 });
-
+// post 请求验证登录信息
+router.post('/login', function (req, res, next) {
+  console.log(req.body);
+  // var data = fs.readFileSync('../../public/user.json');
+  fs.readFile('./public/user.json', function (err, data) {
+    if (err) {
+        return console.error(err);
+    }
+    let datas =  JSON.parse(data)
+    let arr=[]
+   let result = datas.uesr.filter(item => {
+     // 如果账号密码相同，则发送成功
+     if(req.body.tel == item.tel && req.body.pwd == item.pwd){
+       arr = {codel:200,result:'成功'}
+      return true;
+     }else{
+       arr = {codel:404,result:'失败'}
+     }
+      
+    }
+    )
+   
+      res.send(arr)
+  
+ });
+  
+ 
+});
 // 分类和 频道 end
 
 module.exports = router;
