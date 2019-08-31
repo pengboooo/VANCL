@@ -62,12 +62,12 @@
       </div>
     </div>
     <!-- 切换 -->
-    <el-tabs v-model="activeName" class="detfloor" @tab-click="handleClick">
+    <el-tabs v-model="activeName" class="detfloor">
       <el-tab-pane label="商品详情" name="first">
         <img v-for="(item, index) in detailArr.detshopping" :key="index" :src="item" alt="">
       </el-tab-pane>
       <el-tab-pane label="评论" name="second">
-        <ul>
+        <ul class="detapl">
           <li v-for="(item, index) in detailArr.delpl" :key="index">
             <p>来自:{{ item.telname }}</p>
             <p>{{ item.namepl }}</p>
@@ -75,7 +75,23 @@
           </li>
         </ul>
       </el-tab-pane>
-      <el-tab-pane label="咨询" name="third">咨询</el-tab-pane>
+      <el-tab-pane label="咨询" name="third" @click.prevent="textfoucs">
+        <div class="consulting">
+          <h3>我要咨询:</h3>
+          <textarea ref="textdh" class="content" placeholder="您输入的字数不要超过60个字"></textarea>
+          <button>提交</button>
+        </div>
+        <ul class="question">
+          <li v-for="(item, index) in detailArr.questions" :key="index">
+            <h3>问: {{ item.quetitle }}</h3>
+            <div class="content">
+              <p>用户: {{ item.answerArr.anname }}</p>
+              <p>{{ item.answerArr.ancontent }}</p>
+              <span>{{ item.answerArr.antime }}</span>
+            </div>
+          </li>
+        </ul>
+      </el-tab-pane>
     </el-tabs>
   </div>
 </template>
@@ -85,10 +101,6 @@ export default {
   data () {
     return {
       detailArr: [],
-      // detcolor: [],
-      // detsize: [],
-      // detshopping: [],
-      // detpl: [],
       swiperOption: {
         pagination: {
           el: '.swiper-pagination'
@@ -106,7 +118,6 @@ export default {
     getdetail('details').then(data => {
       this.detailArr = data[0]
       this.swiperSlides = data[0].detpic
-      console.log(this.detailArr.detcolor)
     })
   },
   methods: {
@@ -130,8 +141,10 @@ export default {
     addsize (index) {
       this.sizeflag = index
     },
-    handleClick (tab, event) {
-      console.log(tab, event)
+    // 咨询里的文本框获取焦点;
+    textfoucs () {
+      console.log(this.$refs.textdh)
+      this.$refs.textdh[0].focus()
     }
   }
 }
@@ -217,12 +230,12 @@ export default {
     .choseBox {
       padding: 16px 16px;
       height: 60px;
+      display: flex;
       // width: 100%;
       background: #f5f5f5;
       .chosepic {
         width: 40px;
         height: 40px;
-        float: left;
         margin-right: 30px;
         display: inline-block;
         margin-top: 10px;
@@ -231,13 +244,13 @@ export default {
       .right {
         width: 50px;
         height: 50px;
-        float: right;
         display: inline-block;
         margin-top: 10px;
         margin-right: 20px;
       }
       span {
         line-height: 60px;
+        flex: 1;
       }
     }
     .all {
@@ -295,12 +308,13 @@ export default {
     }
   }
   .detfloor{
-    ul{
+    .detapl{
       padding: 0 40px;
+      margin-bottom: 20px;
       li{
         margin-top: 30px;
         position: relative;
-        border-bottom: 2px dashed #999;
+        border-bottom: 1px dashed #999;
         color: #999;
         font-size: 24px;
         padding-bottom: 10px;
@@ -311,6 +325,71 @@ export default {
           position: absolute;
           top: 10px;
           right: 40px;
+        }
+      }
+    }
+    .consulting{
+      height: 380px;
+      background: #E3E3E3;
+      font-size: 28px;
+      padding: 10px 50px;
+      margin-top: 30px;
+      box-sizing: border-box;
+      h3{
+        height: 60px;
+        color: #666;
+        line-height: 60px;
+      }
+      .content{
+        height: 174px;
+        background: #fff;
+        display: block;
+        width: 100%;
+        padding: 10px 20px;
+        box-sizing: border-box;
+        font-size: 26px;
+        line-height: 34px;
+        outline: #f00;
+      }
+      button{
+        height: 64px;
+        background: #D5200E;
+        color: #fff;
+        width: 100%;
+        font-size: 24px;
+        margin-top: 30px;
+        border: none;
+        outline: none;
+      }
+    }
+    .question{
+      padding: 10px 40px 30px;
+      li{
+        padding: 10px 0;
+        border-bottom: 1px dashed #999;
+        margin-top: 10px;
+        font-size: 26px;
+        position: relative;
+        h3{
+          color: #D5200E;
+          line-height: 36px;
+          padding-bottom: 10px;
+        }
+        .content{
+          p{
+            padding: 6px 0;
+            line-height: 36px;
+            color: #666;
+          }
+          p:first-of-type{
+            color: #999;
+          }
+          span{
+            position: absolute;
+            top: 60px;
+            right: 0;
+            color: #999;
+          }
         }
       }
     }

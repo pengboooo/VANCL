@@ -67,6 +67,9 @@ export default {
     flex: 1;
     font-size: 28px;
 }
+.el-tabs__item.is-active {
+    color: #f00;
+}
 .el-tabs__item:hover {
     color: #f00;
     cursor: pointer;
