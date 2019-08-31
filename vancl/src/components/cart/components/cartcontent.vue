@@ -90,7 +90,7 @@ export default{
     },
     // 删除全部
     openall () {
-      this.$confirm('此操作将永久删除该文件, 是否继续?', '提示', {
+      this.$confirm('此操作将永久删除该商品, 是否继续?', '提示', {
         confirmButtonText: '确定',
         cancelButtonText: '取消',
         type: 'warning'
@@ -103,7 +103,6 @@ export default{
         this.summoney = 0
         this.sumnumber = 0
         this.$refs.cartul.innerHTML = ''
-        console.log(typeof this.$refs.cartul.innerHTML)
         if (this.$refs.cartul.innerHTML === '') {
           this.delflag = false
         } else {
@@ -139,7 +138,7 @@ export default{
     },
     // 删除
     opendel (index) {
-      this.$confirm('此操作将永久删除该文件, 是否继续?', '提示', {
+      this.$confirm('此操作将永久删除该商品, 是否继续?', '提示', {
         confirmButtonText: '确定',
         cancelButtonText: '取消',
         type: 'warning'

@@ -36,7 +36,6 @@
         <div class="color">
           <h3>选择颜色</h3>
           <span
-            ref="colorspan"
             v-for="(item, index) in detailArr.detcolor"
             :key="index"
             @click="addcolor(index)"
@@ -110,8 +109,8 @@ export default {
       activeName: 'second',
       flag: false,
       detsum: 1,
-      colorflag: 0,
-      sizeflag: 0
+      colorflag: null,
+      sizeflag: null
     }
   },
   created () {

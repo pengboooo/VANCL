@@ -24,6 +24,7 @@ export default {
   height: 100%;
   width: 100%;
 }
+/* 详情页面修改样式 start */
 .el-tabs__nav {
     white-space: nowrap;
     position: relative;
@@ -74,4 +75,32 @@ export default {
     color: #f00;
     cursor: pointer;
 }
+/* 详情页面修改样式 end */
+/* 购物车修改删除提示框样式  start */
+.el-message-box{
+  width: 560px;
+  height: 200px;
+}
+.el-message-box__title{
+  font-size: 28px;
+  padding-top: 6px
+}
+.el-message-box__headerbtn .el-message-box__close {
+    color: #909399;
+    width: 34px;
+    height: 34px;
+    font-size: 34px;
+}
+.el-message-box__message p{
+  font-size: 24px;
+  padding: 10px 0;
+}
+.el-button--small, .el-button--small.is-round {
+    padding: 0.12rem 0.2rem;
+    width: 120px;
+    height: 40px;
+    font-size: 20px;
+    margin-top: 10px;
+}
+/* 购物车修改删除提示框样式  end */
 </style>

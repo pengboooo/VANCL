@@ -33,7 +33,6 @@ export default {
   created () {
     getRecs().then((data) => {
       this.mydata = data
-      console.log(data)
     })
   }
 }

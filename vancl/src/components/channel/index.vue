@@ -17,7 +17,6 @@ export default {
   created () {
     // 获取数据 初始化数据
     getSlide('pdlist').then(data => {
-      console.log(data)
       this.pddata = data
     })
   },

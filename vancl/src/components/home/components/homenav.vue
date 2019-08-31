@@ -19,7 +19,6 @@ export default {
   },
   created () {
     Homenav().then(data => {
-      console.log(data)
       this.navArr = data
     })
   }

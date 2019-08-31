@@ -79,7 +79,6 @@ export default {
   },
   async mounted () {
     await Miaosha().then(data => {
-      console.log(data)
       this.miaoshaArr = data
     })
     // this.$nextTick(function () {

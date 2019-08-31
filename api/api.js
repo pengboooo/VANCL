@@ -89,6 +89,24 @@ router.get('/details', function(req, res, next) {
           namepl : '不错，非常好',
           nametime : '2019/8/6 22:38:07'
         }
+      ],
+      questions : [
+        {
+          quetitle: "身高一米六五体重46kg应该买几码",
+          answerArr: {
+            anname : 'ThirdSi***',
+            antime : '2019-08-13',
+            ancontent : '亲爱的客户您好，您可以尝试购买一件S码的哦（注：推荐尺码仅供参考），感谢您的支持！祝您购物愉快！O(∩_∩)O'
+          }
+        },
+        {
+          quetitle: "身高一米六五体重46kg应该买几码",
+          answerArr: {
+            anname : 'ThirdSi***',
+            antime : '2019-08-13',
+            ancontent : '亲爱的客户您好，您可以尝试购买一件S码的哦（注：推荐尺码仅供参考），感谢您的支持！祝您购物愉快！O(∩_∩)O'
+          }
+        }
       ]
     }
   ]
