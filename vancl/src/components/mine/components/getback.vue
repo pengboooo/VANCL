@@ -4,7 +4,7 @@
     <heads :manoe="m"></heads>
   <div class="cont">
     <ul>
-      <li><input type="text" placeholder="请输入验证码" v-model="inpcode" class="inp1"  @blur="checkcode">
+      <li><input type="text" placeholder="请输入验证码" class="inp1" v-model="inpcode"   @blur="checkcode">
         <Gitma @msg='getdata' class="code"></Gitma>
         <span>{{tx1}}</span>
       </li>
@@ -89,6 +89,9 @@ export default {
         this.tx3 = '手机号验证码不允许为空'
         this.but = false
       } else if (+this.ipcode !== this.numbers) {
+        this.tx3 = '手机验证码不允许为空'
+        this.but = false
+      } else if (+this.ipcode !== this.numbers) {
         this.tx3 = '验证码输入错误'
         this.but = false
       } else {
@@ -141,13 +144,13 @@ export default {
       }
     },
     open () {
-    // 获取手机验证码弹窗
+      // 获取手机验证码弹窗
       this.$alert(this.numbers, '您获取的手机验证码', {
         confirmButtonText: '确定'
       })
     },
     getiphone () {
-    // 产生随机数 下取整
+      // 产生随机数 下取整
       let numbers = Math.floor(Math.random() * (999999 - 100000) + 100000)
       this.numbers = numbers
     }

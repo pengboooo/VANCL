@@ -31,6 +31,8 @@ export default {
         this.tx1 = '手机号不能为空'
       } else if (!tool.isTel(this.telval)) {
         this.tx1 = '手机号码不合法'
+      } else {
+        this.tx1 = ''
       }
     },
     checkPwd () {

@@ -13,7 +13,7 @@
     <div class="emptycontent">
       <span>{{ user }}</span>
       <i>|</i>
-      <span>退出</span>
+      <span @click="clicktc">退出</span>
     </div>
     <div class="emptyfloor">
       <ul>
@@ -49,6 +49,12 @@ export default({
   },
   created () {
     this.user = JSON.parse(sessionStorage.getItem('user')).datauser.nc
+  },
+  methods: {
+    clicktc () {
+      sessionStorage.removeItem('user')
+      this.$router.push({path: '/login'})
+    }
   }
 })
 </script>

@@ -1877,5 +1877,55 @@ router.post('/getback', function (req, res, next){
  
 })
 // 修改密码 end
+// 新增用户
+router.post('/registe', function (req, res, next){
+  // 获取过来要修改的对象
+  console.log(req.body);
+   // var data = fs.readFileSync('../../public/user.json');
+   fs.readFile('./public/user.json', function (err, data) {
+    if (err) {
+        return console.error(err);
+    }
+    var data = JSON.parse(data)
+    // 读取所有的对象
+    console.log(data.uesr);
+    
+    let boonet = false;
+   
+    for(var i = 0; i < data.uesr.length; i++){
+      console.log(data.uesr[i]);
+      var users = data.uesr[i]
+        if(users.tel === req.body.tel){
+          boonet = true
+        }
+      }
+      if(!boonet){
+        req.body.id = data.uesr.length ;
+        data.uesr.push(req.body)
+        console.log(data);
+        
+        setuser(data)
+      }else{
+        res.send({codel:404,msg:'注册失败,用户已存在'})
+      }
+    })
 
+    //写入用户
+    function setuser(data){
+      data = JSON.stringify(data)
+    fs.writeFile('./public/user.json', data, function(err) {
+      if (err) {
+          throw err;
+          res.send({codel:404,msg:'注册失败'})
+      }else{
+        res.send({codel:200,msg:'注册成功'})
+      }
+    })
+    }
+    
+   
+  })
+ 
+
+// 新增用户 end
 module.exports = router;
