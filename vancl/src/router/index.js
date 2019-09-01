@@ -19,7 +19,7 @@ export default new Router({
       redirect: '/home',
       meta: {
         title: '首页',
-        keepAlive: false
+        keepAlive: true
       }
     },
     {
@@ -28,7 +28,7 @@ export default new Router({
       component: Home,
       meta: {
         title: '首页',
-        keepAlive: false
+        keepAlive: true
       }
     },
     {
@@ -55,7 +55,7 @@ export default new Router({
       component: Cart,
       meta: {
         title: '购物车',
-        keepAlive: true
+        keepAlive: false
       }
     },
     {
@@ -64,7 +64,7 @@ export default new Router({
       component: Mine,
       meta: {
         title: '个人中心',
-        keepAlive: true
+        keepAlive: false
       }
     },
     {

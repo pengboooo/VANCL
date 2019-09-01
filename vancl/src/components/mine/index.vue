@@ -19,10 +19,10 @@ export default {
     return {
     }
   },
-    created(){
-    if(!JSON.parse(sessionStorage.getItem('user'))){
-       this.$router.push({path:'/login'})
-    } 
+  created () {
+    if (!JSON.parse(sessionStorage.getItem('user'))) {
+      this.$router.push({path: '/login'})
+    }
   },
   components: {
     mineheader,

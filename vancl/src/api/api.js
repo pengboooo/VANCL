@@ -63,7 +63,12 @@ export function open1 () {
   /* eslint-disable */
   this.$message(`登录成功`); 
 }
+// 修改密码
 export function getback (data) {
   return axios.post('getback', data)
+}
+// 添加用户
+export function registe (data) {
+  return axios.post('registe', data)
 }
 
