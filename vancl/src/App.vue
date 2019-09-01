@@ -75,6 +75,23 @@ export default {
     color: #f00;
     cursor: pointer;
 }
+.el-badge__content.is-fixed {
+    position: absolute;
+    top: 10px;
+    right: 46px;
+    font-size: 28px;
+    -webkit-transform: translateY(-50%) translateX(100%);
+    transform: translateY(-50%) translateX(100%);
+    height: 30px;
+    border-radius: 50%;
+    line-height: 30px;
+}
+.el-badge__content {
+  background-color: #B81C22;
+}
+[class*=" el-icon-"], [class^=el-icon-] {
+  font-size: 52px;
+}
 /* 详情页面修改样式 end */
 /* 购物车修改删除提示框样式  start */
 .el-message-box{

@@ -92,6 +92,14 @@
         </ul>
       </el-tab-pane>
     </el-tabs>
+    <div class="detbtn">
+      <button>
+        <el-badge :value="detsum">
+          <el-button size="small" icon="el-icon-shopping-cart-full"></el-button>
+        </el-badge>
+      </button>
+      <button>加入购物车</button>
+    </div>
   </div>
 </template>
 <script>
@@ -392,6 +400,26 @@ export default {
           }
         }
       }
+    }
+  }
+  .detbtn{
+    display: flex;
+    height: 102px;
+    border-top: 1px solid #333;
+    position: fixed;
+    bottom: 0;
+    z-index: 1000;
+    width: 100%;
+    button{
+      flex: 1;
+      font-size: 28px;
+      border: none;
+      outline: none;
+      background: #fff;
+    }
+    button:last-child{
+      background: #b81c22;
+      color: #fff;
     }
   }
 }
