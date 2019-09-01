@@ -59,5 +59,6 @@ export default {
 <style lang="less" scoped>
 .home{
   margin-bottom: 102px;
+  overflow: hidden;
 }
 </style>

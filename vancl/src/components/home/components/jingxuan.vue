@@ -20,7 +20,6 @@ export default {
   },
   created () {
     Jingxuan().then(data => {
-      console.log(data)
       this.jingxuanArr = data
     })
   }

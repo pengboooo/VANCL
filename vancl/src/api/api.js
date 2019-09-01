@@ -50,6 +50,12 @@ export function getminenav (url) {
 export function getSlide (url) {
   return axios.get(url)
 }
+
+// 详情页
+export function getdetail (url) {
+  return axios.get(url)
+}
+
 // 返回上一级
 export function goback () {
   this.$router.go(-1)

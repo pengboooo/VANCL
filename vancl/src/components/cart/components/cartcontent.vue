@@ -5,7 +5,7 @@
       <div class="contentcheck">
         <span>在售商品：</span>
         <button @click.prevent="btncheck">{{ checkval }}</button>
-        <button @click.prevent="btndel" :class="!delflag ? 'activebtn' : ''">删除全部</button>
+        <el-button type="text" @click="openall" :class="!delflag ? 'activebtn' : ''">删除全部</el-button>
       </div>
       <!-- 商品 -->
       <ul ref="cartul">
@@ -18,10 +18,12 @@
             <p>尺码： {{ item.cartsize }}</p>
             <span>￥{{ item.cartmoney * item.cartsum }}</span>
             <i @click="redsum(index)">-</i>
-            <input type="text" class="sum" v-model="item.cartsum">
+            <input type="text" class="sum" v-model="item.cartsum" @change="sumchange(index)">
             <i @click="addsum(index)">+</i>
           </div>
-          <img src = "../images/icondel.png" class="icondel" @click="itemdel(index)">
+           <el-button type="text" @click="opendel(index)">
+             <img src="../images/icondel.png" class="icondel">
+           </el-button>
         </li>
       </ul>
       <!-- 结算 -->
@@ -31,14 +33,14 @@
           <span>总金额：￥{{ summoney.toFixed(2) }}</span>
           <span>以优惠：</span>
         </div>
-        <button>结算 ( {{ sumnumber }} )</button>
+        <button @click="end">结算 ( {{ sumnumber }} )</button>
       </div>
     </div>
     <cartempty v-else></cartempty>
   </div>
 </template>
 <script>
-import { getcartshopping } from '../../../api/api'
+// import { getcartshopping } from '../../../api/api'
 import cartempty from './cartempty'
 export default{
   data () {
@@ -53,22 +55,24 @@ export default{
     }
   },
   created () {
-    getcartshopping('cart/shopping').then(data => {
-      this.shoppingArr = data
-      // 显示不同页面；
-      if (this.shoppingArr.length === 0) {
-        this.cartflag = false
-      } else {
-        this.cartflag = true
-      }
-      this.shoppingArr.forEach(item => {
-        this.summoney += item.cartmoney * item.cartsum
-      })
-      // 统计个数
-      this.shoppingArr.forEach(item => {
-        this.sumnumber += item.cartsum
-      })
+    this.shoppingArr = JSON.parse(sessionStorage.getItem('user')).dataorder.shoppingArr
+    // getcartshopping('cart/shopping').then(data => {
+    //   this.shoppingArr = data
+    // 显示不同页面；
+    // this.cartflag = true
+    if (this.shoppingArr.length === 0) {
+      this.cartflag = false
+    } else {
+      this.cartflag = true
+    }
+    this.shoppingArr.forEach(item => {
+      this.summoney += item.cartmoney * item.cartsum
     })
+    // 统计个数
+    this.shoppingArr.forEach(item => {
+      this.sumnumber += item.cartsum
+    })
+    // })
   },
   methods: {
     // 全选/全不选
@@ -87,17 +91,31 @@ export default{
       }
     },
     // 删除全部
-    btndel () {
-      this.cartflag = false
-      this.summoney = 0
-      this.sumnumber = 0
-      this.$refs.cartul.innerHTML = ''
-      console.log(typeof this.$refs.cartul.innerHTML)
-      if (this.$refs.cartul.innerHTML === '') {
-        this.delflag = false
-      } else {
-        this.delflag = true
-      }
+    openall () {
+      this.$confirm('此操作将永久删除该商品, 是否继续?', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).then(() => {
+        this.$message({
+          type: 'success',
+          message: '删除成功!'
+        })
+        this.cartflag = false
+        this.summoney = 0
+        this.sumnumber = 0
+        this.$refs.cartul.innerHTML = ''
+        if (this.$refs.cartul.innerHTML === '') {
+          this.delflag = false
+        } else {
+          this.delflag = true
+        }
+      }).catch(() => {
+        this.$message({
+          type: 'info',
+          message: '已取消删除'
+        })
+      })
     },
     // 商品选不选
     itemschange () {
@@ -121,29 +139,44 @@ export default{
       }
     },
     // 删除
-    itemdel (index) {
-      if (this.shoppingArr[index].cartcheckbox) {
-        this.summoney -= this.shoppingArr[index].cartmoney * this.shoppingArr[index].cartsum
-        this.sumnumber -= this.shoppingArr[index].cartsum
-      }
-      this.shoppingArr.splice(index, 1)
-      if (this.shoppingArr.length === 0) {
-        this.checkflag = false
-        this.delflag = false
-      } else {
-        this.delflag = true
-        this.checkflag = true
-      }
-      if (this.shoppingArr.length === 0) {
-        this.cartflag = false
-      }
+    opendel (index) {
+      this.$confirm('此操作将永久删除该商品, 是否继续?', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).then(() => {
+        this.$message({
+          type: 'success',
+          message: '删除成功!'
+        })
+        if (this.shoppingArr[index].cartcheckbox) {
+          this.summoney -= this.shoppingArr[index].cartmoney * this.shoppingArr[index].cartsum
+          this.sumnumber -= this.shoppingArr[index].cartsum
+        }
+        this.shoppingArr.splice(index, 1)
+        if (this.shoppingArr.length === 0) {
+          this.checkflag = false
+          this.delflag = false
+        } else {
+          this.delflag = true
+          this.checkflag = true
+        }
+        if (this.shoppingArr.length === 0) {
+          this.cartflag = false
+        }
+      }).catch(() => {
+        this.$message({
+          type: 'info',
+          message: '已取消删除'
+        })
+      })
     },
     // 添加数量
     addsum (index) {
-      this.shoppingArr[index].cartsum += 1
+      this.shoppingArr[index].cartsum = (+this.shoppingArr[index].cartsum) + 1
       // 统计个数
       if (this.shoppingArr[index].cartcheckbox) {
-        this.sumnumber += 1
+        this.sumnumber = (+this.sumnumber) + 1
         this.summoney += this.shoppingArr[index].cartmoney
       }
     },
@@ -152,11 +185,27 @@ export default{
       if (this.shoppingArr[index].cartsum === 1) {
         return false
       }
-      this.shoppingArr[index].cartsum -= 1
+      this.shoppingArr[index].cartsum = (+this.shoppingArr[index].cartsum) - 1
       if (this.shoppingArr[index].cartcheckbox) {
-        this.sumnumber -= 1
+        this.sumnumber = (+this.sumnumber) - 1
         this.summoney -= this.shoppingArr[index].cartmoney
       }
+    },
+    // 数量发生改变
+    sumchange (index) {
+      this.sumnumber = 0
+      this.summoney = 0
+      if (this.shoppingArr[index].cartcheckbox) {
+        this.shoppingArr.forEach(item => {
+          this.sumnumber += (+item.cartsum)
+        })
+        this.shoppingArr.forEach(item => {
+          this.summoney += item.cartmoney * item.cartsum
+        })
+      }
+    },
+    end () {
+      alert('余额不足')
     }
   },
   components: {
@@ -174,14 +223,14 @@ export default{
       span{
         font-size: 24px;
         position: relative;
-        left: -260px;
+        left: -220px;
         top: 10px;
       }
       button{
-        width: 120px;
+        width: 140px;
         height: 60px;
         text-align: center;
-        line-height: 70px;
+        // line-height: 70px;
         border: none;
         outline: none;
         background: #B81C22;
@@ -189,6 +238,13 @@ export default{
         border-radius: 8px;
         font-size: 24px;
         margin-right: 20px;
+        span{
+          width: 100%;
+          height: 100%;
+          display: block;
+          line-height: 0px;
+          text-align: center;
+        }
       }
       .activebtn{
         background: #B2B2B2;

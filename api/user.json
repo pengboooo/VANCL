@@ -1,1 +1,70 @@
-{"uesr":[{"id":0,"tel":18574130871,"pwd":"xiaobo123"},{"id":1,"tel":13526072449,"pwd":"XIAOBO123456"},{"id":2,"tel":18574131254,"pwd":"qwe123"},{"id":3,"tel":15236240235,"pwd":"QWEZXC"},{"id":4,"tel":"18574130871","pwd":"9mmYBCj"},{"id":5,"tel":15234562458,"pwd":"Gjkg1ga"}],"order":[{"id":0,"suplist":[{"title":"这是商品名","color":"浅色","size":"X","money":255,"quan":2}]}]}
+{
+  "uesr": [
+    {
+      "id": 0,
+      "tel": 18574130871,
+      "nc": "18574130871",
+      "pwd": "b123123",
+      "jf": 0,
+      "ye": 0,
+      "czz": 0
+    },
+    {
+      "id": 1,
+      "tel": 18513442633,
+      "nc": "店小二",
+      "pwd": "d11011",
+      "jf": 160,
+      "ye": 200,
+      "czz": 1000
+    }
+  ],
+  "order": [
+    {
+      "id": 0,
+      "shoppingArr": [
+        {
+          "cartpic": "http://i.vanclimg.com/140/q80/product/6/3/7/6378227/mid/6378227-1j201710200946089750.jpg",
+          "cartname": "凡客羊毛加厚大披肩",
+          "cartcolor": "浅灰色格子",
+          "cartsize": "130CM X 180CM",
+          "cartmoney": 598.00,
+          "cartsum": 1,
+          "cartcheckbox": true
+        },
+        {
+          "cartpic": "http://i.vanclimg.com/140/q80/product/6/3/7/6378229/mid/6378229-1j201710200947086013.jpg",
+          "cartname": "凡客羊毛加厚大披肩",
+          "cartcolor": "蓝灰色格子",
+          "cartsize": "130CM X 180CM",
+          "cartmoney": 598.00,
+          "cartsum": 1,
+          "cartcheckbox": true
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "shoppingArr": [
+        {
+          "cartpic": "http://i.vanclimg.com/140/q80/product/6/3/7/6378229/mid/6378229-1j201710200947086013.jpg",
+          "cartname": "凡客羊毛加厚大披肩",
+          "cartcolor": "蓝灰色格子",
+          "cartsize": "130CM X 180CM",
+          "cartmoney": 598.00,
+          "cartsum": 1,
+          "cartcheckbox": true
+        },
+        {
+          "cartpic": "http://i.vanclimg.com/140/q80/product/6/3/7/6378227/mid/6378227-1j201710200946089750.jpg",
+          "cartname": "凡客羊毛加厚大披肩",
+          "cartcolor": "浅灰色格子",
+          "cartsize": "130CM X 180CM",
+          "cartmoney": 598.00,
+          "cartsum": 1,
+          "cartcheckbox": true
+        }
+      ]
+    }
+  ]
+}

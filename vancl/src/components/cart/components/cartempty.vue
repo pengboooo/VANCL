@@ -11,9 +11,9 @@
       <button>去逛逛</button>
     </div>
     <div class="emptycontent">
-      <span>获取的名字</span>
+      <span>{{ user }}</span>
       <i>|</i>
-      <span>退出</span>
+      <span @click="clicktc">退出</span>
     </div>
     <div class="emptyfloor">
       <ul>
@@ -42,7 +42,20 @@
 </template>
 <script>
 export default({
-
+  data () {
+    return {
+      user: ''
+    }
+  },
+  created () {
+    this.user = JSON.parse(sessionStorage.getItem('user')).datauser.nc
+  },
+  methods: {
+    clicktc () {
+      sessionStorage.removeItem('user')
+      this.$router.push({path: '/login'})
+    }
+  }
 })
 </script>
 <style lang="less" scoped>

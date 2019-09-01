@@ -46,18 +46,8 @@ export default {
   created () {
     getGoods().then((data) => {
       this.goods = data
-      console.log(data)
     })
   }
-  // async mounted () {
-  //   this.goods = await getGoods()
-  //   console.log(this.goods)
-  //   this.$nextTick(() => {
-  //     var ulLength = this.$refs.myli[0].offsetWidth * (this.goods.lists.length + 1.1)
-  //     this.$refs.myul.style.width = ulLength + 'px'
-  //     console.log(ulLength)
-  //   })
-  // }
 }
 </script>
 <style lang="less" scoped>
@@ -101,7 +91,7 @@ h3{
     display: flex;
     // width: 3200px;
     overflow-x: auto;
-    height: 476px;
+    // height: 476px;
     margin-top: 20px;
     margin-bottom: 20px;
   li{

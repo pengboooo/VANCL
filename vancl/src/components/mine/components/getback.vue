@@ -86,11 +86,12 @@ export default {
     },
     iph2 () {
       if (this.ipcode === '') {
+        this.tx3 = '手机号验证码不允许为空'
+        this.but = false
+      } else if (+this.ipcode !== this.numbers) {
         this.tx3 = '手机验证码不允许为空'
         this.but = false
       } else if (+this.ipcode !== this.numbers) {
-        console.log(this.ipcode)
-
         this.tx3 = '验证码输入错误'
         this.but = false
       } else {
@@ -135,10 +136,8 @@ export default {
           pwd: this.pwdval
         }
         getback(users).then(data => {
-          console.log(data)
           if (data.codel === 200) {
             console.log('成功了')
-
             this.$router.push({path: '/mine'})
           }
         })
@@ -152,7 +151,6 @@ export default {
     },
     getiphone () {
       // 产生随机数 下取整
-
       let numbers = Math.floor(Math.random() * (999999 - 100000) + 100000)
       this.numbers = numbers
     }

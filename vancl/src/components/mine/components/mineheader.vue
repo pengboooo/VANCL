@@ -5,19 +5,28 @@
       <div class="pic">
         <img v-lazy="'http://i10.m.vancl.com/Content/H5/img/H5-V0.jpg'" alt="">
       </div>
-      <p>ThirdSign_qq_E20B46381931A98127E8400E408F8D0B</p>
+      <p>{{ userArr.nc }}</p>
       <i></i>
     </div>
     <ul>
-      <li>积分：</li>
-      <li>余额：</li>
-      <li>成长值：</li>
+      <li>积分： {{ userArr.jf }}</li>
+      <li>余额： {{ userArr.ye }}</li>
+      <li>成长值： {{ userArr.czz }}</li>
     </ul>
   </div>
 </template>
 <script>
 export default({
-
+  data () {
+    return {
+      userArr: {}
+    }
+  },
+  created () {
+    // this.userArr = JSON.parse(this.$store.state.userObj)
+    console.log(this.$store.state.userObj)
+    this.userArr = JSON.parse(sessionStorage.getItem('user')).datauser
+  }
 })
 </script>
 <style lang="less" scoped>
@@ -72,9 +81,6 @@ export default({
     display: flex;
     justify-content: space-between;
     font-size: 28px;
-    li{
-
-    }
   }
 }
 </style>

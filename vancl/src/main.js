@@ -3,18 +3,26 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+
 import 'lib-flexible'
+
 import animated from 'animate.css'
+
 import VueLazyload from 'vue-lazyload'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+
 import 'swiper/dist/css/swiper.css'
-import Vuex from 'vuex'
+
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import Vuex from 'vuex'
+import store from './store/index'
 
 Vue.use(ElementUI)
-Vue.use(Vuex)
 Vue.use(VueAwesomeSwiper)
+
+// Vue.use(Element, { size: 'small', zIndex: 3000 })
+Vue.use(Vuex)
 Vue.use(animated)
 Vue.use(VueLazyload)
 
@@ -27,24 +35,11 @@ router.beforeEach((to, from, next) => {
   next()
 })
 
-// 创建一个 store(全局存储)
-const store = new Vuex.Store({
-  // state存储应用层的状态
-  state: {
-    listName: '这是一个值'
-  },
-  mutations: {
-    changeValue (state, newVal) {
-      state.listName = newVal
-    }
-  }
-})
-
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-  router,
   store,
+  router,
   components: { App },
   template: '<App/>'
 })

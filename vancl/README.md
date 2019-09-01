@@ -57,3 +57,50 @@ npm test
 # 要解决的问题
 ##  分类页 上一个页面传值到下一个页面，刷新值消失，考虑用locastort。
 
+## Element UI
+
+### 商品详情页
+
+遇到的问题：点击选中的颜色或尺码，添加样式
+
+1. ![1567217762266](C:\Users\曾书乐\AppData\Roaming\Typora\typora-user-images\1567217762266.png)
+
+   解决办法    
+
+   
+
+   > <span
+   >
+   > ​            v-for="(item, index) in detailArr.detcolor"
+   >
+   > ​            :key="index"
+   >
+   > ​            @click="addcolor(index)"
+   >
+   > ​			`// 判断当colorflag 和index  相等时才添加样式`
+   >
+   > ​            :class="colorflag === index ? 'detactive' : ' ' " \>
+   >
+   > ​	{{ item }}
+   >
+   > </span>
+   >
+   > data () {
+   >
+   > ​    return {
+   >
+   > ​      colorflag: null
+   >
+   > ​    }
+   >
+   >   },
+   >
+   >  methods: {
+   >
+   > ​    addcolor (index) {					// 当点击事件触发时，把对应元素的索引值赋值给  colorflag     
+   >
+   > ​      this.colorflag = index
+   >
+   > ​    }
+   >
+   > }

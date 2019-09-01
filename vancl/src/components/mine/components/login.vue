@@ -31,6 +31,8 @@ export default {
         this.tx1 = '手机号不能为空'
       } else if (!tool.isTel(this.telval)) {
         this.tx1 = '手机号码不合法'
+      } else {
+        this.tx1 = ''
       }
     },
     checkPwd () {
@@ -65,7 +67,8 @@ export default {
                 pwd: this.pwdval
             }
             // 写入session验证登录状态
-             sessionStorage.setItem('user', JSON.stringify(user))
+             sessionStorage.setItem('user', JSON.stringify(result))
+             this.$store.commit('getuserObj', JSON.parse(sessionStorage.getItem('user')).datauser)
             // 路由重定向
             this.$router.push({path:'/mine'})
           }else{
@@ -73,7 +76,6 @@ export default {
             this.telval = '',
             this.pwdval = ''
           }
-          console.log(result)
         })
       }
     }

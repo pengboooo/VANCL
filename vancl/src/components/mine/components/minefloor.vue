@@ -18,7 +18,6 @@ export default({
   },
   async created () {
     await getminenav('mine/nav').then(data => {
-      console.log(data)
       this.mineNav = data
     })
   }

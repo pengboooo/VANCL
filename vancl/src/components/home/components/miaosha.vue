@@ -9,7 +9,9 @@
     <div class="bom">
         <ul ref="bomul">
           <li ref="bomli" v-for='(item,index) in miaoshaArr' :key='index'>
-            <img :src="item.img" alt="">
+            <router-link to = "/detail">
+              <img :src="item.img" alt="" @click="getid(index)">
+            </router-link>
             <span>{{item.price}}</span>
             <s>{{item.Reprice}}</s>
           </li>
@@ -68,6 +70,9 @@ export default {
         }
         return num
       }
+    },
+    getid (index) {
+      this.$store.commit('getcid', index)
     }
   },
   created () {
@@ -77,7 +82,6 @@ export default {
   },
   async mounted () {
     await Miaosha().then(data => {
-      console.log(data)
       this.miaoshaArr = data
     })
     // this.$nextTick(function () {

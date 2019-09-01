@@ -33,7 +33,6 @@ export default {
   created () {
     getRecs().then((data) => {
       this.mydata = data
-      console.log(data)
     })
   }
 }
@@ -82,7 +81,7 @@ h3{
     display: flex;
     // width: 3200px;
     overflow-x: auto;
-    height: 476px;
+    // height: 476px;
     margin-top: 20px;
     margin-bottom: 20px;
   li{

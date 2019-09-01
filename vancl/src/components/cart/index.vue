@@ -23,9 +23,6 @@ export default {
   components: {
     cartnav,
     cartcontent
-  },
-  method () {
-
   }
 }
 </script>

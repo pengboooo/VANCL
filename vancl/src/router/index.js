@@ -5,6 +5,7 @@ import Category from '@/components/category/index'
 import Channel from '@/components/channel/index'
 import Cart from '@/components/cart/index'
 import Mine from '@/components/mine/index'
+import Detail from '@/common/details'
 import login from '@/components/mine/mine'
 import Lists from '@/components/category/lists/index'
 import Registe from '@/components/mine/components/registe'
@@ -101,6 +102,14 @@ export default new Router({
       meta: {
         title: '找回密码',
         keepAlive: true
+      }
+    },
+    {
+      path: '/detail',
+      name: 'Detail',
+      component: Detail,
+      meta: {
+        title: '商品详情'
       }
     }
   ]
