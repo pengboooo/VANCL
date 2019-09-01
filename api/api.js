@@ -1779,4 +1779,41 @@ router.post('/login', function (req, res, next) {
 });
 // 分类和 频道 end
 
+// 修改密码
+router.post('/getback', function (req, res, next){
+  // 获取过来要修改的对象
+  console.log(req.body);
+   // var data = fs.readFileSync('../../public/user.json');
+   fs.readFile('./public/user.json', function (err, data) {
+    if (err) {
+        return console.error(err);
+    }
+    var data = JSON.parse(data)
+    // 读取所有的对象
+    console.log(data.uesr);
+    for(var i = 0; i < data.uesr.length; i++){
+      console.log(data.uesr[i]);
+      var users = data.uesr[i]
+          if(users.tel === req.body.tel){
+      for(let item in users){
+        if(item !== 'id'){
+          users[item] = req.body[item]
+        }
+      }
+      }
+    }
+    data = JSON.stringify(data)
+    fs.writeFile('./public/user.json', data, function(err) {
+      if (err) {
+          throw err;
+          res.send({codel:404,msg:'修改失败'})
+      }else{
+        res.send({codel:200,msg:'修改成功'})
+      }
+    })
+  })
+ 
+})
+// 修改密码 end
+
 module.exports = router;

@@ -1,8 +1,14 @@
 <template>
   <div id="app">
     <Common></Common>
+   
     <transition  enter-active-class="animated zoomIn" leave-active-class="animated zoomOut">
-      <router-view/>
+        <keep-alive>
+         <router-view v-if="$route.meta.keepAlive" />
+        </keep-alive>
+    </transition>
+     <transition  enter-active-class="animated zoomIn" leave-active-class="animated zoomOut">
+      <router-view v-if="!$route.meta.keepAlive" />
     </transition>
   </div>
 </template>

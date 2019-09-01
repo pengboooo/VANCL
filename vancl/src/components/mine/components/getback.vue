@@ -4,20 +4,30 @@
     <heads :manoe="m"></heads>
   <div class="cont">
     <ul>
-      <li><input type="text" placeholder="请输入验证码" v-model="inpcode" class="inp1"  @blur="checkcode" ref = "loginInp1">
+      <li><input type="text" placeholder="请输入验证码" v-model="inpcode" class="inp1"  @blur="checkcode">
         <Gitma @msg='getdata' class="code"></Gitma>
         <span>{{tx1}}</span>
       </li>
-      <li><input type="text" placeholder="请输入您的手机号" class="inp1"><button class="ri" @click="getiphone">获取短信验证码</button></li>
-      <li><input type="text" placeholder="请输入短信验证码" class="inp2"></li>
-      <li><input type="text" placeholder="新密码:6-16位字母，数字，特殊字符" class="inp2"></li>
-      <li><input type="text" placeholder="再次输入新密码" class="inp2"></li>
-      <li><button class="btn">提交</button></li>
+      <li><input type="text" placeholder="请输入您的手机号" class="inp1" v-model="inpiph" @blur="iph"><button class="ri" @click="getiphone();open()">获取短信验证码</button>
+        <span>{{tx2}}</span>
+      </li>
+      <li><input type="text" placeholder="请输入短信验证码" class="inp2" @blur="iph2" v-model="ipcode">
+        <span>{{tx3}}</span>
+      </li>
+      <li><input type="text" placeholder="新密码:6-16位字母，数字，特殊字符" class="inp2"  v-model="pwdval" @blur="checkPwd">
+        <span>{{tx4}}</span>
+      </li>
+      <li><input type="text" placeholder="再次输入新密码" class="inp2"  v-model="pwdval2" @blur="checkPwd2">
+        <span>{{tx5}}</span>
+      </li>
+      <li><button class="btn" @click="veriAll">提交</button></li>
     </ul>
   </div>
 </div>
 </template>
 <script>
+import { Checks } from '../js/checks'
+import { getback } from '@/api/api'
 import heads from './heads'
 import Gitma from './gitma'
 export default {
@@ -28,9 +38,20 @@ export default {
   data () {
     return {
       m: '找回密码',
-      code: '',
-      inputcode: '',
-      tx1: ''
+      but:false,
+      code: ' ',
+      inputcode: ' ',
+      inpcode:'',
+      tx1: ' ',
+      tx2:'',
+      tx3:'',
+      pwdval: '',
+      pwdval2: '',
+      tx4: '',
+      tx5: '',
+      ipcode:'',
+      numbers: '',
+      inpiph:''
     }
   },
   methods: {
@@ -41,15 +62,103 @@ export default {
     checkcode () {
       if (this.inpcode === '') {
         this.tx1 = '验证码不允许为空'
+        this.but = false
       } else if (this.inpcode !== this.code) {
         this.tx1 = '请输入正确验证码'
+         this.but = false
       } else {
         this.tx1 = ''
+        this.but = true
       }
     },
+    iph(){
+      let tool = new Checks()
+      if (this.inpiph === '') {
+        this.tx2 = '手机号不允许为空'
+         this.but = false
+      } else if (!tool.isTel(this.inpiph)) {
+        this.tx2 = '手机号不合法'
+         this.but = false
+      } else {
+        this.tx2 = ''
+        this.but = true
+      }
+    },
+    iph2(){
+       if (this.ipcode === '') {
+        this.tx3 = '手机号验证码不允许为空'
+         this.but = false
+      } else if (+this.ipcode !== this.numbers) {
+        console.log(this.ipcode);
+        
+        this.tx3 = '验证码输入错误'
+         this.but = false
+      } else {
+        this.tx3 = ''
+        this.but = true
+      }
+    },
+     checkPwd () {
+      let tool = new Checks()
+      if (this.pwdval === '') {
+        this.tx4 = '密码不能为空'
+         this.but = false
+      } else if (!tool.isPwd(this.pwdval)) {
+        this.tx4 = '密码不合法'
+         this.but = false
+      }else{
+        this.tx4 = ''
+        this.but = true
+      }
+    },
+     checkPwd2 () {
+      let tool = new Checks()
+      if (this.pwdval2 === '') {
+        this.tx5 = '密码不能为空'
+         this.but = false
+      } else if (!tool.isPwd(this.pwdval2)) {
+        this.tx5 = '密码不合法'
+         this.but = false
+      }else if(this.pwdval !== this.pwdval2){
+        this.tx5 = '两次密码不一致'
+         this.but = false
+      }else{
+        this.tx5 = ''
+        this.but = true
+      }
+    },
+    veriAll(){
+        if(this.but = true){
+          let users ={
+            id :3,
+            tel : +this.inpiph,
+            pwd : this.pwdval
+          }
+          getback(users).then(data =>{
+            console.log(data);
+            if(data.codel === 200){
+              console.log("成功了");
+              
+              this.$router.push({path:'/mine'})
+            }
+            
+          })
+          
+        }
+    },
+     open() {
+      //获取手机验证码弹窗
+        this.$alert(this.numbers, '您获取的手机验证码', {
+          confirmButtonText: '确定'
+        });
+      },
     getiphone () {
-      // 产生随机数
-      return Math.random() * (999999 - 100000) + 100000
+      // 产生随机数 下取整
+
+     let numbers = Math.floor(Math.random() * (999999 - 100000) + 100000)
+     this.numbers =numbers
+     console.log(numbers);
+     
     }
   }
 }
@@ -82,9 +191,12 @@ export default {
       }
       span{
         display: block;
+        width: 100%;
+        height: 25px;
         margin-top: 10px;
         line-height: 30px;
-        color: #b81b22;
+        color: #b81b22!important;
+        margin-bottom: -20px;
       }
     .inp1{
       width: 378px;

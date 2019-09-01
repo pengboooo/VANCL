@@ -4,7 +4,8 @@ import Home from '@/components/home/index'
 import Category from '@/components/category/index'
 import Channel from '@/components/channel/index'
 import Cart from '@/components/cart/index'
-import Mine from '@/components/mine/mine'
+import Mine from '@/components/mine/index'
+import login from '@/components/mine/mine'
 import Lists from '@/components/category/lists/index'
 import Registe from '@/components/mine/components/registe'
 import Getback from '@/components/mine/components/getback'
@@ -17,7 +18,8 @@ export default new Router({
       path: '/',
       redirect: '/home',
       meta: {
-        title: '首页'
+        title: '首页',
+        keepAlive: false
       }
     },
     {
@@ -25,7 +27,8 @@ export default new Router({
       name: 'Home',
       component: Home,
       meta: {
-        title: '首页'
+        title: '首页',
+        keepAlive: false
       }
     },
     {
@@ -33,7 +36,8 @@ export default new Router({
       name: 'Category',
       component: Category,
       meta: {
-        title: '分类'
+        title: '分类',
+        keepAlive: true
       }
     },
     {
@@ -41,7 +45,8 @@ export default new Router({
       name: 'Channel',
       component: Channel,
       meta: {
-        title: '频道'
+        title: '频道',
+        keepAlive: true
       }
     },
     {
@@ -49,7 +54,8 @@ export default new Router({
       name: 'Cart',
       component: Cart,
       meta: {
-        title: '购物车'
+        title: '购物车',
+        keepAlive: true
       }
     },
     {
@@ -57,7 +63,17 @@ export default new Router({
       name: 'Mine',
       component: Mine,
       meta: {
-        title: '个人中心'
+        title: '个人中心',
+        keepAlive: true
+      }
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: login,
+      meta: {
+        title: '登录页',
+        keepAlive: true
       }
     },
     {
@@ -65,7 +81,8 @@ export default new Router({
       name: 'lists',
       component: Lists,
       meta: {
-        title: '分类列表'
+        title: '分类列表',
+        keepAlive: true
       }
     },
     {
@@ -73,7 +90,8 @@ export default new Router({
       name: 'Registe',
       component: Registe,
       meta: {
-        title: '免费注册'
+        title: '免费注册',
+        keepAlive: true
       }
     },
     {
@@ -81,7 +99,8 @@ export default new Router({
       name: 'Getback',
       component: Getback,
       meta: {
-        title: '找回密码'
+        title: '找回密码',
+        keepAlive: true
       }
     }
   ]

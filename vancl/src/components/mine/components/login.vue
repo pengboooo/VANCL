@@ -60,8 +60,14 @@ export default {
         GetLogin (data).then(result => {
           if (result.codel === 200) {
             this.$message(`登录成功`); 
+            let user={
+                tel:this.telval,
+                pwd: this.pwdval
+            }
+            // 写入session验证登录状态
+             sessionStorage.setItem('user', JSON.stringify(user))
             // 路由重定向
-            this.$router.push({path:'/cart'})
+            this.$router.push({path:'/mine'})
           }else{
             this.$message(`登录失败，账号或者密码错误`); 
             this.telval = '',

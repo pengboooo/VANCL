@@ -63,7 +63,7 @@ export function open1 () {
   /* eslint-disable */
   this.$message(`登录成功`); 
 }
-export function gitcode () {
-  
+export function getback (data) {
+  return axios.post('getback', data)
 }
 
